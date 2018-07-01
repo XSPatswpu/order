@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: ORDER
+  cloud:
+    config:
+      # order-server中引入config-client，从config-server中拉取配置
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: dev
+# 当eureka-server的端口号为非默认端口号时，此时直接启动会抛异常h
+# eureka-client的注册异常，从而引起config-client拉取配置异常
+# 因此需要在此处注册eureka-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8762/eureka/
