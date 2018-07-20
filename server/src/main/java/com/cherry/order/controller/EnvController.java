@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RefreshScope
 public class EnvController {
-    @Value("${env}")
-    private String env;
+//    @Value("${env}")
+//    private String env;
 
     @GetMapping("/print")
     public String getEvn(){
-        return env;
+        return null;
     }
 }
