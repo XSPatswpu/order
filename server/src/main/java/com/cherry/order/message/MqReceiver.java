@@ -1,5 +1,7 @@
 package com.cherry.order.message;
 
+import com.cherry.order.dto.OrderMasterDTO;
+import com.cherry.order.entity.OrderMaster;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;
@@ -12,7 +14,7 @@ import org.springframework.stereotype.Component;
  * Author: cherry
  * Date: Created in 2018/7/20 下午4:51
  */
-@Slf4j
+/*@Slf4j
 @Component
 public class MqReceiver {
 
@@ -27,8 +29,8 @@ public class MqReceiver {
     }
 
     @RabbitListener(bindings = @QueueBinding(exchange = @Exchange("order"),value = @Queue("cherryQueue"),key = "computer"))
-    public void processForComputer(String message){
-        log.info("MqReceiver computer: {}",message);
+    public void processForComputer(String orderMaster){
+        OrderMasterDTO orderMasterDTO = JSON.parseObject(orderMaster,OrderMasterDTO.class);
+        log.info("MqReceiver orderMaster: {}",orderMasterDTO);
     }
-
-}
+}*/

@@ -3,6 +3,7 @@ package com.cherry.order.dto;
 import lombok.Data;
 
 import javax.validation.constraints.NotEmpty;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -11,7 +12,7 @@ import java.util.List;
  * Date: Created in 2018/6/21 下午2:12
  */
 @Data
-public class OrderMasterDTO {
+public class OrderMasterDTO{
     @NotEmpty(message = "客户姓名必填")
     private String name;//客户姓名
     @NotEmpty(message = "客户电话必填")
